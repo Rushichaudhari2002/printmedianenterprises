@@ -1,0 +1,63 @@
+#hover-btn:hover {
+  background-color: whitesmoke;
+  color: black;
+}
+
+#hover-btn:hover a {
+  color: black !important;
+}
+
+@keyframes underlineAnimation {
+  0% {
+    width: 0;
+  } /* Start with no underline */
+  100% {
+    width: 100%;
+  } /* Fully underline at the end */
+}
+
+#underline-hover {
+  text-decoration: none;
+  position: relative; /* Required for absolute positioning of pseudo-element */
+}
+
+#underline-hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0; /* Start with no underline */
+  height: 2px; /* Underline thickness */
+  background-color: #000; /* Underline color */
+  transition: width 1s ease; /* Transition for the width change */
+}
+
+#underline-hover:hover::after {
+  width: 100%; /* Fully underline on hover */
+  animation: underlineAnimation 0.3s alternate; /* Apply animation on hover */
+}
+
+/* products */
+
+.product-box {
+  border: 1px solid #ddd; /* Add border to the product box */
+  margin-bottom: 20px; /* Add margin to create space between product boxes */
+  padding: 15px; /* Add padding to the product box */
+}
+
+.product-image {
+  text-align: center; /* Center align the image */
+}
+
+.product-info {
+  text-align: center; /* Center align the text below the image */
+}
+
+.product-box {
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.product-content {
+  display: block; /* Make the product content a block-level element */
+  padding: 10px; /* Add padding for better click area */
+}

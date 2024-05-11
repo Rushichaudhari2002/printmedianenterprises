@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-evenly bg-dark p-3 my-3">
+    <button class="btn btn-outline-light">Dashboard</button>
+    <button class="btn btn-outline-light">Requests</button>
+    <button class="btn btn-outline-light">Inquiries</button>
+</div>
+
+<div class="alert alert-success alert-dismissible fade show m-3" role="alert" *ngIf="showAlert">
+    <strong> {{ alertMessage }}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"> <span
+            aria-hidden="true">&times;</span></button>
+</div>
+
+<div class="container-fluid">
+    <h2>Add Category</h2>
+    <form [formGroup]="categoryForm" (ngSubmit)="addCategory()">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" placeholder="Category Name" class="form-control" id="name" formControlName="name"
+                required />
+        </div>
+        <div class="mb-3">
+            <label for="desc" class="form-label">Description</label>
+            <input type="text" placeholder="Description" class="form-control" id="desc" formControlName="description"
+                required />
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="showAlertMessage()">Submit</button>
+    </form>
+</div>
